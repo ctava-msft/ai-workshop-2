@@ -131,6 +131,12 @@ Be sure to Accept Changes and Continue:
 
 * The system message, when used with the LM, results in the LM returning accurate and properly formatted JSON based on the provided conversation transcript.
 
+## Solution
+
+<details markdown="block">
+<summary>Expand this section to view the solution</summary>
+</details>
+
 
 # Task 02 - Create, complete, and test a Prompt Flow
 
@@ -204,27 +210,7 @@ Great, now that you have seen how you can deploy models, test them in the playgr
 12. A **Chat** dialog displays. Copy and paste the following content into the chat box and press send (if you encounter a 404 error, please verify you selected a connection). This is the same conversation transcript that was used earlier in the exercise.
 
 ```text
-Agent: Hello, welcome to Lamna Healthcare customer service. My name is Juan, how can I assist you?
-Client: Hello, Juan. I'm calling because I'm having issues with my medical bill I just received few days ago. It's incorrect and it does not match the numbers I was presented before my medical procedure.
-Agent: I'm very sorry for the inconvenience, sir. Could you please tell me your phone number and your full name?
-Client: Yes, sure. My number is 011-4567-8910 and my name is Martín Pérez.
-Agent: Thank you, Mr. Pérez. I'm going to check your plan, you deduction limits and current year transactions towards your deductions. One moment, please.
-Client: Okay, thank you.
-Agent: Mr. Pérez, I've reviewed your plan and I see that you have the Silver basic plan of $3,000 deductable. Is that correct?
-Client: Yes, that's correct.
-Agent: Well, I would like to inform you that you have not met your deductible yet and $2,800 of the procedure will be still be your responsability and that will meet your deductible for the year.
-Client: What? How is that possible? I paid over $2,000 already towards my deductable this year, I should only be $1,000 away from reaching my deductible not $2,800. 
-Agent: I understand, Mr. Pérez. But keep in mind that not all fees your pay to doctors and labs and medications count towards your deductible. 
-Client: Well, but they didn't explain that to me when I contracted the plan. They told me that everything I pay from my pocket towards doctors, specialists, labs and medications will count towards my deductable. I feel cheated.
-Agent: I apologize, Mr. Pérez. It was not our intention to deceive you. If you think the deductable is too high, I recommed changing the plan to Gold at the next renewal window and that will bring the deductable to $1,000 for the new year.
-Client: And how much would that cost me?
-Agent: The plan rates will come out in November, you can call us back then or check the new rates online at that time.
-Client: Mmm, I don't know. Isn't there another option? Can't you reduce the amount I have to pay for this bill as I was not explained how the deductible work correctly?
-Agent: I'm sorry, Mr. Pérez. I don't have the power to change the bill or your deductible under the current Silver plan.
-Client: Well, let me think about it. Can I call later to confirm?
-Agent: Of course, Mr. Pérez. You can call whenever you want. The number is the same one you dialed now. Is there anything else I can help you with?
-Client: No, that's all. Thank you for your attention.
-Agent: Thank you, Mr. Pérez. Have a good day. Goodbye.
+
 ```
 
 13. Notice the chat results responds to the incoming transcript correctly.
