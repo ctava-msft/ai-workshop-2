@@ -17,14 +17,12 @@
   "variables": {
     "aiServicesName": "[format('ais-{0}', variables('uniqueSuffix'))]",
     "computeName": "[format('ci-{0}', variables('uniqueSuffix'))]",
-    "groupName": "amlworkspace",
     "keyVaultName": "[format('kv-{0}', variables('uniqueSuffix'))]",
     "location": "[resourceGroup().location]",
     "storageAccountName": "[format('sa{0}', variables('uniqueSuffix'))]",
     "storageContainerName": "[format('sc{0}', variables('uniqueSuffix'))]",
     "tenantId": "[subscription().tenantId]",
     "uniqueSuffix": "[substring(uniqueString(resourceGroup().id), 0, 5)]",
-    "virtualNetworkName": "[format('vnet-{0}', variables('uniqueSuffix'))]",
     "workspaceName": "[format('w-{0}', variables('uniqueSuffix'))]"
   },
   "resources": [
