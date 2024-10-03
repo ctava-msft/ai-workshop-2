@@ -135,6 +135,11 @@ Be sure to Accept Changes and Continue:
 
 ![Chat-11.](images/labgrab56.png)
 
+Let's update the parameters and TPM to avoid rate limiting:
+
+![Chat-12.](labgrab61.png) 
+![Chat-13.](labgrab62.png)
+
 6. Issue the following queries:
 
 what is the age of the patient?
