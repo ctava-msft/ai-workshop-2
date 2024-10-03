@@ -137,8 +137,8 @@ Be sure to Accept Changes and Continue:
 
 Let's update the parameters and TPM to avoid rate limiting:
 
-![Chat-12.](labgrab61.png) 
-![Chat-13.](labgrab62.png)
+![Chat-12.](images/labgrab61.png) 
+![Chat-13.](images/labgrab62.png)
 
 6. Issue the following queries:
 
@@ -151,7 +151,7 @@ what is the patient's occupation?
 
 ## Success Criteria
 
-* The system message, when used with the LM, results in the LM returning accurate and properly formatted JSON based on the provided conversation transcript.
+* The responses to the queries are from the document and not an hallucination from LM.
 
 ## Solution
 
@@ -180,73 +180,34 @@ Key steps include:
 1. Create a Prompt Flow in Azure AI Studio using the system message authored in the first Task.
 2. Become familiar with the Prompt Flow editor and the Graph visualization.
 3. Execute the flow within Azure AI Studio using the `GPT-4o` model.
-4. Verify the flow responds correctly to a conversation transcript.
+4. Verify the flow responds correctly to a question about the diabetes outcome.
+
+Create the prompt flow
+
+![PF-1.](images/labgrab63.png)
+
+Start the compute session
+![PF-2.](images/labgrab64.png)
+
+
+Chat with the prompt flow. Issue the following queries:
+
+what is the age of the patient?
+
+what is the patient's family history?
+
+what is the patient's occupation?
 
 ## Success Criteria
 
 * Create a Prompt Flow in Azure AI Studio.
-* Execute the flow within Azure AI Studio using the `GPT-4o` model.
+* Execute the flow within Azure AI Studio using the `GPT-4o` model and the classification model.
 
 ## Solution
 
 <details markdown="block">
 <summary>Expand this section to view the solution</summary>
 
-##### 1) Create a Prompt Flow
-
-Great, now that you have seen how you can deploy models, test them in the playground, and also seen a bit of how Content Safety works, let's see how you can create an orchestration flow for your LLM application in Prompt Flow.
-
-1. In [Azure AI Studio](https://ai.azure.com), open the project that was created (if it's not already open) and return to the Chat Playground by selecting `Chat` from the left menu that is located beneath the **Project playground** heading.
-
-2. In the **Chat playground** ensure the `gpt-4o` model is selected in the **Deployment** drop down.
-
-3. In the **System message** text field, add the following text. This is the same system message that was used earlier in the exercise. Select **Apply Changes** to save the system message.
-
-    ```text
-    You are a data analyst. Your job is to extract summary information from files by creating JSON. You always try to extract and format as a JSON:
-    1. Mean Age [Age]
-    2. Mean Pregnancies [Pregnancies]
-    3. Number of patients with Diabetes (outcome=1) [outcome]
-    Only extract information that you're sure. If you're unsure, write "Unknown/Not Found" in the JSON file.
-    ```
-
-![prompt-flow-00.](images/labgrab30.png)
-
-4. Now that the system message is saved, select **Prompt flow** from the taskbar menu above the chat. A dialog will display asking about customization, leave the default settings and select **Open**.
-
-5. In a few moments, the Prompt Flow editor will open. This is where you can create a flow that orchestrates the execution of multiple models and services.
-
-6. To the right of the screen, observe the **Graph** section. This visualization displays the steps the flow will take to process the inputs and generate the outputs.
-
-![prompt-flow-0.](images/labgrab31.png)
-
-7. In the **Graph** section, select the **chat** node. This will highlight the associated **chat** node editor in the center of the screen. Ensure a **Connection** is selected.
-
-8. Review the flow's configuration for api, deployment, prompt, and parameters like temperature and max_tokens. These values are model parameters that can be adjusted to customize the behavior of the model, or quickly test different configurations.
-
-9. At the top of the flow editor (scroll to the top of the middle panel), there is an **Inputs** section, notice there are two inputs, **chat_history** and **question**. These are variables that are passed into the flow along with an individual chat completion request. If you look at the **Prompt** field in the **chat** node editor, you'll see how the variables are used in the prompt. The final rendered prompt is what gets sent into the large language model. This happens at each request because calls to the LLM are stateless.
-
-10. To execute the flow within Azure AI Studio, you'll require a Runtime. To initiate it, select the **Start compute session** option from top taskbar menu.
-
-![prompt-flow-1.](images/labgrab32.png)
-
-11. In about a minute, the **Start compute session** button will change to a message indicating **Compute session running**. Select the **Chat** button next to this message to start interacting with the flow.
-
-![prompt-flow-2.](images/labgrab33.png)
-
-12. A **Chat** dialog displays. Copy and paste the following content into the chat box and press send (if you encounter a 404 error, please verify you selected a connection). This is the same conversation transcript that was used earlier in the exercise.
-
-```text
-
-```
-
-13. Notice the chat results responds to the incoming transcript correctly.
-
-![prompt-flow-3.](images/labgrab34.png)
-
-> [!IMPORTANT]
-> If you encounter an error like the one below, please add the `Reader` role to the `storage account` that is associated with the `Azure AI Studio` workspace.
-
-![Error for Reader permission on storage ](images/labgrab37.png)
+![PF-3.](images/labgrab65.png)
 
 </details>
