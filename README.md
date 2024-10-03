@@ -109,11 +109,7 @@ The key tasks are as follows:
 
 4. In the Azure AI Studio Playground, author and set a system message that directs the LM to extract information and output the result formatted as JSON. Having the output as JSON allows for the ease of integration of these results at a later time into other systems. The JSON should contain the following information (you may specify your choice of field names):
     ```text
-    You are a data analyst. Your job is to extract summary information from files by creating JSON. You always try to extract and format as a JSON:
-    1. Mean Age [Age]
-    2. Mean Pregnancies [Pregnancies]
-    3. Number of patients with Diabetes (outcome=1) [outcome]
-    Only extract information that you're sure. If you're unsure, write "Unknown/Not Found" in the JSON file.
+        You are an AI assistant that helps people find information.
     ```
 ![Chat-2.](images/labgrab45.png)
 
@@ -127,6 +123,27 @@ Be sure to Accept Changes and Continue:
 
 ![Chat-5.](images/labgrab48.png)
 
+![Chat-6.](images/labgrab51.png)
+
+![Chat-7.](images/labgrab52.png)
+
+![Chat-8.](images/labgrab53.png)
+
+![Chat-9.](images/labgrab54.png)
+
+![Chat-10.](images/labgrab55.png)
+
+![Chat-11.](images/labgrab56.png)
+
+6. Issue the following queries:
+
+what is the age of the patient?
+
+what is the patient's family history?
+
+what is the patient's occupation?
+
+
 ## Success Criteria
 
 * The system message, when used with the LM, results in the LM returning accurate and properly formatted JSON based on the provided conversation transcript.
@@ -135,6 +152,9 @@ Be sure to Accept Changes and Continue:
 
 <details markdown="block">
 <summary>Expand this section to view the solution</summary>
+
+![Chat-Finish.](images/labgrab60.png)
+
 </details>
 
 
